@@ -10,3 +10,10 @@ while display.IsOpen():
   detections = net.Detect(img, width, height)
   display.RenderOnce(img, width, height)
   display.SetTitle("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
+  for detection in detections:
+    class_name = net.GetClassDesc(detection.ClassID)
+    name = f"Detected '{class_name}'"
+   if "dog" in name:
+    print("Yay! You found the hidden dog!")
+    
+
