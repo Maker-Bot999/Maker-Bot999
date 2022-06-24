@@ -10,6 +10,6 @@ This will be the basic image detection code, but when a human appears on screen,
 
 ## Running this project
 
-1. Run this the way you would with any code on the Jetson, through the jupyter notebook.
+1. Run this the way you would with any code on the Jetson, through cmd on the Nano itself
 
 [View a video explanation here](video link)
