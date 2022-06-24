@@ -1,26 +1,15 @@
-import jetson.inference
-import jetson.utils
+# Simple human detection
 
-import argparse
+This is an AI that will detect when a human appears on screen
 
-# parse the command line
-parser = argparse.ArgumentParser()
-parser.add_argument("filename", type=str, help="filename of the image to process")
-parser.add_argument("--network", type=str, default="googlenet", help="model to use, can be:  googlenet, resnet-18, ect.")
-args = parser.parse_args()
+![add image descrition here](direct image link here)
 
-# load an image (into shared CPU/GPU memory)
-img = jetson.utils.loadImage(args.filename)
+## The Algorithm
 
-# load the recognition network
-net = jetson.inference.imageNet(args.network)
+This will be the basic image detection code, but when a human appears on screen, it will make a big alert. This will be done by constantly checking whether the AI sees a human in the frame.
 
-# classify the image
-class_idx, confidence = net.Classify(img)
+## Running this project
 
-# find the object description
-class_desc = net.GetClassDesc(class_idx)
+1. Run this the way you would with any code on the Jetson, through the jupyter notebook.
 
-# print out the result
-if "dog" in class_idx:
-  print("image is recognized as '{:s}' (class #{:d}) with {:f}% confidence".format(class_desc, class_idx, confidence * 100))
+[View a video explanation here](video link)
